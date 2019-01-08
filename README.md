@@ -5,7 +5,7 @@ Solve 2D mazes using Dijkstra's algorithm
 Progress
 ---------------------------------------------
 Completed:
-1. Basic graph functionality and console /IO
+1. Basic graph functionality and console I/O
 2. Graph testing
 3. Dijkstra's algorithm and testing
 ---------------------------------------------
