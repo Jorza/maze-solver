@@ -157,6 +157,7 @@ class Graph:
             edge.start.remove_edge(edge)
 
         # delete the vertex
+        # TODO: Adjust indices of other vertices after deleted vertex is popped. Write test cases.
         self.__vertices.pop(index)
         del self.__vertex_names[vertex_name]
 
@@ -181,7 +182,7 @@ class Graph:
             in_list[idx1] = in_list[idx2]
             in_list[idx2] = temp
 
-        def sort_single_item(item, in_list, key=None, sort_index=None):
+        def sort_single_item(in_list, key=None, sort_index=None):
             # If a key is not given, construct the key to return it's argument.
             if key is None:
                 def key(x): return x
@@ -230,7 +231,7 @@ class Graph:
                     # Case where adjacent vertex already has a smaller cost.
                     # Don't calculate new cost, don't change priority queue.
 
-                    sort_single_item(next_vertex, priority_queue, key=lambda vertex: vertex.cost, sort_index=sort_index)
+                    sort_single_item(priority_queue, key=lambda vertex: vertex.cost, sort_index=sort_index)
 
                 # All costs calculated, remove current vertex from priority queue.
                 priority_queue.pop(0)
